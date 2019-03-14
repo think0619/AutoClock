@@ -3,8 +3,7 @@ import pygame
 from baidutts import generateAudio
 import datetime
 from relayhandler import controlrelay
-
-
+from  getHouseTemp import gethouseweather
 
 import time
 def getweatherinfo():
@@ -29,7 +28,7 @@ def gettodayNJWeather():
         return thisdaycast
 
 def weatherbroadcast():
-    generateAudio(gettodayNJWeather())
+    generateAudio(gettodayNJWeather() + gethouseweather())
     pygame.mixer.init(16000, -16, 1, 1024)
     pygame.mixer.music.load('result.mp3')
     pygame.mixer.music.play()
@@ -70,8 +69,10 @@ while True:
     now = datetime.datetime.now()
     # 闹钟
     if now.hour == 5 and now.minute == 50:
+        controlrelay(7, 1)
         playclockmusic()
     elif now.hour == 6 and now.minute == 10:
+        controlrelay(7, 1)
         weatherbroadcast()
     else:
         controlrelay(7, 0)

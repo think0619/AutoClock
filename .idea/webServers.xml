@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="41b6f818-550a-4663-8acb-b767016986cd" name="rasp" url="http://10.0.0.24">
-        <fileTransfer host="10.0.0.24" port="22" accessType="SFTP">
+      <webServer id="41b6f818-550a-4663-8acb-b767016986cd" name="rasp" url="http://home.hellolinux.cn">
+        <fileTransfer host="home.hellolinux.cn" port="22" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
